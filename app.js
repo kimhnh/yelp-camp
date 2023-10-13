@@ -25,7 +25,8 @@ const userRoutes = require('./routes/users.js');
 
 //mongodb atlas -- use this for deployment
 // const dbUrl = process.env.DB_URL;
-const dbUrl = 'mongodb://127.0.0.1:27017/yelp-camp';
+//'mongodb://127.0.0.1:27017/yelp-camp'
+const dbUrl = process.env.DB_URL;
 
 //mongoose
 main().catch((err) => console.log(err));
@@ -51,7 +52,7 @@ const store = MongoStore.create({
   mongoUrl: dbUrl, //dbUrl
   touchAfter: 24 * 60 * 60, //session only updated 1 time in a time period (sec)
   crypto: {
-    secret: 'secretcode',
+    secret: 'FmT2PLNw8AEAqB',
   },
 });
 
@@ -63,7 +64,7 @@ store.on('error', function (e) {
 const sessionConfig = {
   store,
   name: 'session',
-  secret: 'secretcode',
+  secret: 'FmT2PLNw8AEAqB',
   resave: false,
   saveUninitialized: true,
   cookie: {
