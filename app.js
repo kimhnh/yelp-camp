@@ -31,7 +31,6 @@ const dbUrl = process.env.DB_URL;
 //mongoose
 main().catch((err) => console.log(err));
 async function main() {
-  //mongodb://127.0.0.1:27017/yelp-camp
   await mongoose.connect(dbUrl); //dbUrl for deployment
   console.log('mongo connection open');
   // use `await mongoose.connect('mongodb://user:password@127.0.0.1:27017/test');` if your database has auth enabled
